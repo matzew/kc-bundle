@@ -55,6 +55,50 @@
         <url-pattern>/admin/</url-pattern>
     </servlet-mapping>
 
+
+
+
+
+
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>AgPush</web-resource-name>
+            <url-pattern>/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>user</role-name>
+        </auth-constraint>
+    </security-constraint>
+
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>HttpBasic</web-resource-name>
+            <description>Matches a few special URLs.</description>
+            <url-pattern>/rest/two</url-pattern>
+
+            <url-pattern>/admin</url-pattern>
+            <url-pattern>/rest/realm</url-pattern>
+            <url-pattern>/rest/theme</url-pattern>
+
+        </web-resource-collection>
+        <!-- No auth-constraint does the exclude! -->
+    </security-constraint>
+
+    <login-config>
+        <auth-method>KEYCLOAK</auth-method>
+        <realm-name>UnifiedPush Server</realm-name>
+    </login-config>
+
+    <security-role>
+        <role-name>admin</role-name>
+    </security-role>
+    <security-role>
+        <role-name>user</role-name>
+    </security-role>
+
+
+
+
     <!--
 
     <security-constraint>

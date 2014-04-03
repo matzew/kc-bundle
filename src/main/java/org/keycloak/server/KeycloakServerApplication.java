@@ -17,6 +17,7 @@
 package org.keycloak.server;
 
 import net.wessendorf.keycloak.extended.EndpointOne;
+import net.wessendorf.keycloak.extended.EndpointTwo;
 import org.jboss.resteasy.logging.Logger;
 import org.keycloak.models.ApplicationModel;
 import org.keycloak.models.ClaimMask;
@@ -43,7 +44,7 @@ public class KeycloakServerApplication extends KeycloakApplication {
     private static final Logger log = Logger.getLogger(KeycloakServerApplication.class);
 
     static {
-        Config.setAdminRealm("UnifiedPush Server");
+        Config.setAdminRealm("UnifiedPushServer");
     }
 
     public KeycloakServerApplication(@Context ServletContext servletContext) throws FileNotFoundException {
@@ -51,6 +52,7 @@ public class KeycloakServerApplication extends KeycloakApplication {
 
         // add the endpoints.......
         classes.add(EndpointOne.class);
+        classes.add(EndpointTwo.class);
 
 
 
@@ -88,6 +90,9 @@ public class KeycloakServerApplication extends KeycloakApplication {
                 consoleApp.setBaseUrl(upsUrl + "/admin/");
             }
 
+
+
+            System.out.println("\n\n\n\n\n\n" +  adminRealm.getRequiredCredentials());
 
             session.getTransaction().commit();
         } finally {
