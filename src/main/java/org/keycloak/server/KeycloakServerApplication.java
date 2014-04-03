@@ -42,6 +42,10 @@ public class KeycloakServerApplication extends KeycloakApplication {
 
     private static final Logger log = Logger.getLogger(KeycloakServerApplication.class);
 
+    static {
+        Config.setAdminRealm("UnifiedPush Server");
+    }
+
     public KeycloakServerApplication(@Context ServletContext servletContext) throws FileNotFoundException {
         super(servletContext);
 
@@ -50,7 +54,6 @@ public class KeycloakServerApplication extends KeycloakApplication {
 
 
 
-        Config.setAdminRealm("UnifiedPush Server");
         //Config.setThemeDefault("ups");
 
         KeycloakSession session = factory.createSession();
