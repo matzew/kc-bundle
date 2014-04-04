@@ -19,6 +19,7 @@ package org.keycloak.server;
 import net.wessendorf.keycloak.extended.EndpointOne;
 import net.wessendorf.keycloak.extended.EndpointTwo;
 import org.jboss.resteasy.logging.Logger;
+import org.keycloak.models.AdminRoles;
 import org.keycloak.models.ApplicationModel;
 import org.keycloak.models.ClaimMask;
 import org.keycloak.models.Config;
@@ -73,23 +74,29 @@ public class KeycloakServerApplication extends KeycloakApplication {
             adminRealm.getUser("admin").removeRequiredAction(UserModel.RequiredAction.UPDATE_PASSWORD);
 
             if (adminRealm.getApplicationByName("my-app") == null) {
+
+                //adminRealm.set
+
                 // Create Application in realm for console and initialize it
                 ApplicationModel consoleApp = new ApplicationManager(manager).createApplication(adminRealm, "my-app");
 
-                consoleApp.setPublicClient(true);
-
+                // roles and scope:
                 consoleApp.addDefaultRole("user");
                 consoleApp.addRole("admin");
+                consoleApp.addScope(adminRealm.getRole(AdminRoles.ADMIN));
 
+                // do I really need this ????
                 consoleApp.setAllowedClaimsMask(ClaimMask.USERNAME);
 
-                final String upsUrl = "http://localhost:8080/my-app";
-				
+
+                // By default: is public, hence no credential/secret in keykloak.json. But we want that:
 				consoleApp.setPublicClient(false);
 
-                consoleApp.addRedirectUri(upsUrl + "/rest/one");
-                //consoleApp.addWebOrigin(upsUrl);
-                consoleApp.setBaseUrl(upsUrl + "/rest/one");
+                // TODO:
+                // hrm......... how do I set the "" to false???
+
+
+
             }
 
 

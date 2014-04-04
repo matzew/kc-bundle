@@ -1,11 +1,11 @@
 {
   "realm": "UnifiedPushServer",
-  "realm-public-key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCJ+JfR6rxmXeoujRuK0suMVhcBv12wDasDq7M5AQMWS2c/xj9sj0AZvp44o4FH5WeT1xxElXIfiptBjBD5MK9inG6ts8kktixhI9pX8/7T8X22aqFuHgsyjwAP2bodViBAGua7oejQ3MKUmCKud27EyRDhW3uc5+QW1kB6Lou4EQIDAQAB",
+  "realm-public-key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCRaq5qnbmWBYIQshrTA5b1oJ2C1va5V1eTXvPpTj8gggG1OPE7jaZeiqcp/oaETZrggqIfHLaJuPxEuioWBCae5ofp3wCw4oxVYtLAAKaYbhgCNOqCIw2hz4NK7GfpKqfes0/pCj+ijZi/M+AyIankSb1WYLgvUFJgu3QgFkl+NQIDAQAB",
   "auth-server-url": "http://localhost:8080/my-app",
   "ssl-not-required": true,
   "resource": "my-app",
   "credentials": {
-    "secret": "fed3dcf0-07bb-44bd-8696-e48918be0ba0"
+    "secret": "b3919741-8495-427d-8d4d-1a5cb7adddcd"
   },
-  "use-resource-role-mappings": true
+  "use-resource-role-mappings": false
 }
