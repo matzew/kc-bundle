@@ -59,7 +59,7 @@
 
 
 
-
+<!--
     <security-constraint>
         <web-resource-collection>
             <web-resource-name>AgPush</web-resource-name>
@@ -81,7 +81,6 @@
             <url-pattern>/rest/theme</url-pattern>
 
         </web-resource-collection>
-        <!-- No auth-constraint does the exclude! -->
     </security-constraint>
 
     <login-config>
@@ -95,7 +94,7 @@
     <security-role>
         <role-name>user</role-name>
     </security-role>
-
+-->
 
 
 
