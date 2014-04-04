@@ -66,7 +66,7 @@
             <url-pattern>/*</url-pattern>
         </web-resource-collection>
         <auth-constraint>
-            <role-name>user</role-name>
+            <role-name>admin</role-name>
         </auth-constraint>
     </security-constraint>
 
@@ -76,12 +76,13 @@
             <description>Matches a few special URLs.</description>
             <url-pattern>/rest/two</url-pattern>
 
-            <url-pattern>/admin</url-pattern>
-            <url-pattern>/rest/realm</url-pattern>
-            <url-pattern>/rest/theme</url-pattern>
+            <url-pattern>/admin/*</url-pattern>
+            <url-pattern>/rest/admin/*</url-pattern>
+            <url-pattern>/rest/realms/*</url-pattern>
+            <url-pattern>/rest/theme/*</url-pattern>
+
 
         </web-resource-collection>
-        <!-- No auth-constraint does the exclude! -->
     </security-constraint>
 
     <login-config>
