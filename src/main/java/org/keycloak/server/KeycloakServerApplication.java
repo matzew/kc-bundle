@@ -70,11 +70,12 @@ public class KeycloakServerApplication extends KeycloakApplication {
 
 
             // No need to require admin to change password as this server is for dev/test
-            //adminRealm.getUser("admin").removeRequiredAction(UserModel.RequiredAction.UPDATE_PASSWORD);
+            adminRealm.getUser("admin").removeRequiredAction(UserModel.RequiredAction.UPDATE_PASSWORD);
 
             if (adminRealm.getApplicationByName("my-app") == null) {
                 // Create Application in realm for console and initialize it
                 ApplicationModel consoleApp = new ApplicationManager(manager).createApplication(adminRealm, "my-app");
+
                 consoleApp.setPublicClient(true);
 
                 consoleApp.addDefaultRole("user");
@@ -83,16 +84,14 @@ public class KeycloakServerApplication extends KeycloakApplication {
                 consoleApp.setAllowedClaimsMask(ClaimMask.USERNAME);
 
                 final String upsUrl = "http://localhost:8080/my-app";
+				
+				consoleApp.setPublicClient(false);
 
-                consoleApp.addRedirectUri(upsUrl + "/admin");
-                consoleApp.addRedirectUri(upsUrl + "/admin/");
-                consoleApp.addWebOrigin(upsUrl);
-                consoleApp.setBaseUrl(upsUrl + "/admin/");
+                consoleApp.addRedirectUri(upsUrl + "/rest/one");
+                //consoleApp.addWebOrigin(upsUrl);
+                consoleApp.setBaseUrl(upsUrl + "/rest/one");
             }
 
-
-
-            System.out.println("\n\n\n\n\n\n" +  adminRealm.getRequiredCredentials());
 
             session.getTransaction().commit();
         } finally {

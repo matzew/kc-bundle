@@ -1,11 +1,11 @@
 {
-    "realm": "UnifiedPushServer",
-    "realm-public-key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCS47jAu+ZNTz4WGfbZf1Gz7rTlq4wd7rDtxd77yF8tAoj7ZZSS/FQsgFUUJzUPbd4hb65f7VOPGHFwPkMrF2mNibVQ9grQfrEyUIKloNyLo+iS6qBc2jXZSTBHitXJYTCFH1lQHwWhE94tel6AAZKHok43mY9O0tGhyTZkrRMBlQIDAQAB",
-    "auth-server-url": "http://localhost:8080/my-app",
-    "ssl-not-required": true,
-    "resource": "UnifiedPushServer-realm",
-    "credentials": {
-        "secret": "bff3df11-911a-4351-878d-fd71d0be3c14"
-    },
-    "use-resource-role-mappings": true
+  "realm": "UnifiedPushServer",
+  "realm-public-key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCJ+JfR6rxmXeoujRuK0suMVhcBv12wDasDq7M5AQMWS2c/xj9sj0AZvp44o4FH5WeT1xxElXIfiptBjBD5MK9inG6ts8kktixhI9pX8/7T8X22aqFuHgsyjwAP2bodViBAGua7oejQ3MKUmCKud27EyRDhW3uc5+QW1kB6Lou4EQIDAQAB",
+  "auth-server-url": "http://localhost:8080/my-app",
+  "ssl-not-required": true,
+  "resource": "my-app",
+  "credentials": {
+    "secret": "fed3dcf0-07bb-44bd-8696-e48918be0ba0"
+  },
+  "use-resource-role-mappings": true
 }
